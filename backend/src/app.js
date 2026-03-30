@@ -1,12 +1,9 @@
 import express from "express";
+import todoRoutes from "./routes/todo.routes.js";
 
 const app = express();
 
-const todoRoutes = require('./routes/todo.routes');
-
 app.use(express.json());
+app.use("/api/todos", todoRoutes);
 
-app.use('/api/todos', todoRoutes);
-
-module.exports = app;
-
+export default app;
