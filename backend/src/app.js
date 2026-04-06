@@ -1,6 +1,7 @@
 import express from "express";
 import todoRoutes from "./routes/todo.routes.js";
 import cookieParser from "cookie-parser";
+import userRoutes from "./routes/user.route.js";
 import session from "express-session"; 
 
 const app = express();
@@ -16,6 +17,7 @@ app.use(session({
 }));
 
 app.use("/api/todos", todoRoutes);
+app.use("/api/user", userRoutes);
 
 // Test routes
 app.get("/user", (req, res) => {
